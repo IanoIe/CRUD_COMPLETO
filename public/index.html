@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,200;1,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/button.css">
-    <link rel="stylesheet" href="css/records.css">
-    <link rel="stylesheet" href="css/modal.css">
-    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <link rel="stylesheet" href="stylesheets/button.css">
+    <link rel="stylesheet" href="stylesheets/records.css">
+    <link rel="stylesheet" href="stylesheets/modal.css">
     <title>CRUD</title>
 </head>
 <body>
@@ -19,7 +18,7 @@
 
     <main>
         <button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar Cliente</button>
-        <table class="records">
+        <table id="tableClient" class="records">
             <thead>
                 <tr>
                     <th>Nome</th>
@@ -29,16 +28,66 @@
                     <th>Ação</th>
                 </tr>
             </thead>
-
+            
             <tbody>
                 <tr>
                     <td>Maria</td>
                     <td>maria@gmail.com</td>
-                    <td>(+351) 213-986-734</td>
+                    <td>(11) 97165-1111</td>
+                    <td>Anapolis</td>
+                    <td>
+                        <button type="button" class="button green">editar</button>
+                        <button type="button" class="button red">excluir</button>
+                    </td>
                 </tr>
+                <tr>
+                    <td>João Pedro</td>
+                    <td>joao@gmail.com</td>
+                    <td>(11) 97165-2222</td>
+                    <td>Jandira</td>
+                    <td>
+                        <button type="button" class="button green">editar</button>
+                        <button type="button" class="button red">excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Jose da Silva</td>
+                    <td>jose@gmail.com</td>
+                    <td>(11) 97165-3333</td>
+                    <td>São Roque</td>
+                    <td>
+                        <button type="button" class="button green">editar</button>
+                        <button type="button" class="button red">excluir</button>
+                    </td>
+                </tr>
+                
+
             </tbody>
         </table>
+
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h2>Novo Cliente</h2>
+                    <span class="modal-close" id="modalClose">&#10006;</span>
+                </header>
+                <form id="form" class="modal-form">
+                    <input type="text" id="nome" data-index="new" class="modal-field" placeholder="Nome do Cliente" required>
+                    <input type="email" id="email" class="modal-field" placeholder="E-mail do Cliente" required>
+                    <input type="text" id="telemovel" class="modal-field" placeholder="Telemovel do Cliente" required>
+                    <input type="text" id="cidade" class="modal-field" placeholder="Cidade do Cliente" required>
+                </form>
+                <footer class="modal-footer">
+                    <button id="salvar" class="button green">Salvar</button>
+                    <button id="cancelar" class="button blue">Cancelar</button>
+                </footer>
+            </div>
+        </div>
     </main>
+
+    <footer>
+        Copyright &copy; Aprendiz. AC
+    </footer>
     
 
     <script src="javascripts/main.js" defer></script>
